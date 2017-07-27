@@ -10,10 +10,10 @@ config :movies,
   ecto_repos: [Movies.Repo]
 
 # Configures the endpoint
-config :movies, Movies.Endpoint,
+config :movies, MoviesWeb.Endpoint,
   url: [host: "localhost"],
-  secret_key_base: "FiqDGdCEHxknCxhUsJsJTim0Y3n4kX3xmPWnuxHKsGR4/PsSqwhu5TYvwSSE+wc4",
-  render_errors: [view: Movies.ErrorView, accepts: ~w(html json)],
+  secret_key_base: "2O8cZJWU5EUMt1zrZaQ6vLxGiQAPmwlUgURYhonwNMiSXyxZUCBFif9tCcBFfLEV",
+  render_errors: [view: MoviesWeb.ErrorView, accepts: ~w(html json)],
   pubsub: [name: Movies.PubSub,
            adapter: Phoenix.PubSub.PG2]
 

@@ -1,0 +1,20 @@
+<div class="jumbotron">
+  <h2><%= gettext "Welcome to %{name}!", name: "TrendingMovies" %></h2>
+  <p class="lead">A place where you<br />can find the latest movie info!</p>
+</div>
+
+<%= for movie <- @movies do %>
+  <div class="row">
+    <div class="col-sm-12 col-md-12">
+      <div class="thumbnail">
+        <img src="https://images.alphacoders.com/793/thumb-1920-793242.jpg" alt="">
+        <div class="caption">
+          <h3><%= movie.name %></h3>
+          <p><strong> Budget: </strong> <%= movie.budget %></p>
+          <p><strong>Box Office: </strong> <%= movie.box_office %></p>
+          <p><a href="http://www.imdb.com/title/tt3315342/?ref_=ttpl_pl_tt" class="btn btn-primary" role="button">About</a> <a href="http://www.imdb.com/title/tt3315342/fullcredits?ref_=tt_cl_sm#cast" class="btn btn-default" role="button">Cast</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>

@@ -1,0 +1,23 @@
+<h2>Show Actor</h2>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @actor.name %>
+  </li>
+
+  <li>
+    <strong>Surname:</strong>
+    <%= @actor.surname %>
+  </li>
+
+  <li>
+    <strong>Net worth:</strong>
+    <%= @actor.net_worth %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: actor_path(@conn, :edit, @actor) %></span>
+<span><%= link "Back", to: actor_path(@conn, :index) %></span>

@@ -1,0 +1,30 @@
+<h2>Listing Actors</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Surname</th>
+      <th>Net worth</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for actor <- @actors do %>
+    <tr>
+      <td><%= actor.name %></td>
+      <td><%= actor.surname %></td>
+      <td><%= actor.net_worth %></td>
+
+      <td class="text-right">
+        <span><%= link "Show", to: actor_path(@conn, :show, actor), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "Edit", to: actor_path(@conn, :edit, actor), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "Delete", to: actor_path(@conn, :delete, actor), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Actor", to: actor_path(@conn, :new) %></span>

@@ -1,0 +1,23 @@
+<h2>Show Movie</h2>
+
+<ul>
+
+  <li>
+    <strong>Box office:</strong>
+    <%= @movie.box_office %>
+  </li>
+
+  <li>
+    <strong>Budget:</strong>
+    <%= @movie.budget %>
+  </li>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @movie.name %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: movie_path(@conn, :edit, @movie) %></span>
+<span><%= link "Back", to: movie_path(@conn, :index) %></span>
