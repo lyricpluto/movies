@@ -8,6 +8,7 @@ defmodule Movies.Web.Movie do
     field :box_office, :integer
     field :budget, :integer
     field :name, :string
+    field :image_url, :string
 
     timestamps()
   end
@@ -15,7 +16,7 @@ defmodule Movies.Web.Movie do
   @doc false
   def changeset(%Movie{} = movie, attrs) do
     movie
-    |> cast(attrs, [:box_office, :budget, :name])
-    |> validate_required([:box_office, :budget, :name])
+    |> cast(attrs, [:box_office, :budget, :name, :image_url])
+    |> validate_required([:box_office, :budget, :name, :image_url])
   end
 end
