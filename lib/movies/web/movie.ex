@@ -10,6 +10,9 @@ defmodule Movies.Web.Movie do
     field :name, :string
     field :image_url, :string
 
+    has_many :movie_actors, Movies.Web.MovieActor
+    has_many :actors, through: [:movie_actors, :actor]
+
     timestamps()
   end
 

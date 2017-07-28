@@ -18,7 +18,7 @@ defmodule Movies.Web do
 
   """
   def list_movies do
-    Repo.all(Movie)
+    Repo.all(Movie) |> Repo.preload(:actors)
   end
 
   @doc """
@@ -35,7 +35,7 @@ defmodule Movies.Web do
       ** (Ecto.NoResultsError)
 
   """
-  def get_movie!(id), do: Repo.get!(Movie, id)
+  def get_movie!(id), do: Repo.get!(Movie, id) |> Repo.preload(:actors)
 
   @doc """
   Creates a movie.
